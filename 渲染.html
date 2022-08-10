@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: #e5e5e5;
+        }
+
+        ul {
+            width: 1500px;
+            height: 720px;
+            margin-left: 300px;
+            margin-top: 80px;
+        }
+
+        ul li {
+            list-style: none;
+            width: 15%;
+            height: 300px;
+            background-color: #fff;
+            float: left;
+            margin: 30px;
+            text-align: center;
+            font-size: 12px;
+            overflow: hidden;
+        }
+
+        ul li img {
+            width: 100%;
+            height: 70%;
+            
+        }
+
+        ul li span {
+            line-height: 30px;
+        }
+
+        .price {
+            color: red;
+        }
+
+        .originalPrice {
+            color: rgb(140, 140, 140);
+            text-decoration: line-through;
+        }
+
+        .mouse {
+            transform:scale(1.1)
+        }
+    </style>
+</head>
+
+<body>
+    <script>
+        var Data = [{
+                id: 1,
+                url: 'http://www.andisk.com/andisk/data/bk/images/present/f6b76dd0-507b-477e-af13-a47f12568d2e.png',           
+                des: 'CSS基础篇之入门介绍及语法应...',
+                price: 2299,
+                md: 3000
+
+            },
+            {
+                id: 2,
+                url: 'http://www.andisk.com/andisk/data/bk/images/present/81077583-8168-4ec2-842a-d2d0603c73ef.png',
+                des: 'PHP基础教程之HTML入门及实... ',
+                price: 699,
+                md: 3000
+            },
+            {
+                id: 3,
+                url: 'http://www.andisk.com/andisk/data/bk/images/present/f1263f78-d0e3-49a3-a139-d88609d1aad1.png',       
+                des: 'PHP语法基础与数据库详细讲解免费',
+                price: 2999,
+                md: 3000
+            },
+            {
+                id: 4,
+                url: 'http://www.andisk.com/andisk/data/bk/images/present/851ff7ec-14ae-4c63-88ba-aa4a37bacb0c.png',
+                des: '全方位解读Laravel框架及实战免费',
+                price: 2299,
+            },
+           {
+                id: 5,
+                url: 'http://www.andisk.com/andisk/data/bk/images/present/4570b240-63d1-4c1b-8168-19fc0d80fb27.png',
+                des: 'Restful接口开发',
+                price: 2299,
+            
+
+            },
+            {
+                id: 6,
+                url: 'http://www.andisk.com/andisk/data/bk/images/present/4ddebd24-480b-4f9a-8570-bad6556f6242.png',
+                des: '阿里云环境搭建以及项目上线 ',
+                price: 699,
+                
+            },
+            {
+                id: 7,
+                url: 'http://www.andisk.com/andisk/data/bk/images/present/4570b240-63d1-4c1b-8168-19fc0d80fb27.png',
+        
+                des: ' ThinkPHP实现第三方应用接入',
+                price: 2999,
+               
+            },
+            {
+                id: 8,
+                url: 'http://www.andisk.com/andisk/data/bk/images/present/eb50b2d5-f75d-4cf8-a4af-dfb39eefe3e0.png',
+            
+                des: 'PHP人工智能之PHP机器学习',
+                price: 2299,
+               
+
+            },
+            {
+                id: 9,
+                url: 'http://www.andisk.com/andisk/data/bk/images/present/eb50b2d5-f75d-4cf8-a4af-dfb39eefe3e0.png',
+            
+                des: 'PHP人工智能之PHP机器学习',
+                price: 2299,
+                
+
+
+            },
+            {
+                id: 10,
+                url: 'http://www.andisk.com/andisk/data/bk/images/present/eb50b2d5-f75d-4cf8-a4af-dfb39eefe3e0.png',
+            
+                des: 'PHP人工智能之PHP机器学习',
+                price: 2299,
+               
+
+            },
+        ]
+        console.log(Data)
+        var str = '<ul>'
+        for (var i = 0; i < Data.length; i++) {
+            str += `
+                <li>
+                    <img src="${Data[i].url}" alt="">                  
+                    <span>${Data[i].des}</span><br>
+                    <p class="price">${Data[i].price}</p>
+                   
+                </li>
+            `
+        }
+        str += '</ul>'
+        document.write(str)
+        
+        class a{
+            constructor() {
+                this.li = document.querySelectorAll('li')
+                this.init()
+            }
+            init() {
+                this.mouse()
+            }
+            mouse() {
+                for (var j = 0; j < this.li.length; j++) {
+
+                    this.li[j].firstElementChild.onmouseover = function () {
+                        this.className = 'mouse'
+                        console.log(this)
+                    }
+                    this.li[j].firstElementChild.onmouseout = function () {
+                        this.className = ''                        
+                    }
+                }
+            }
+        }
+        new a()
+    </script>
+</body>
+
+</html>
